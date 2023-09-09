@@ -1,0 +1,38 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+    "eslint.format.enable": true,
+    "jest.jestCommandLine": "yarn test",
+    "jest.autoRun": "off",
+    "gitlens.integrations.enabled": true,
+    "prettier.enable": true,
+    "cSpell.customDictionaries": {},
+    // validates files with a `.js` extension
+    "javascript.validate.enable": true,
+    // validates files with a `.ts` or `.tsx` extension
+    "typescript.validate.enable": true,
+    "editor.formatOnSave": true,
+    "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "workbench.colorTheme": "Bearded Theme feat. Gold D Raynh",
+    "git.autofetch": true,
+    "git.autoStash": true,
+    "git.enableCommitSigning": false,
+    "git.enableSmartCommit": true,
+    "git.fetchOnPull": true,
+    "git.promptToSaveFilesBeforeCommit": "always",
+    "git.pruneOnFetch": true,
+    "git.pullTags": false,
+    "scm.defaultViewMode": "tree",
+    "scm.providerCountBadge": "auto",
+    "explorer.openEditors.visible": 0,
+    "workbench.editor.revealIfOpen": true,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.view.alwaysShowHeaderActions": true,
+    "window.openFilesInNewWindow": "on",
+    "window.openFoldersInNewWindow": "on",
+    "window.zoomLevel": 1
+  }
+  
+  
