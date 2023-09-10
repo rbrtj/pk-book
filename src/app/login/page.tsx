@@ -1,7 +1,7 @@
-import { Button, buttonVariants } from "@/components/ui/Button";
+import { buttonVariants } from "@/components/ui/Button";
 import Image from "next/image";
-import { RegisterForm } from "@/components/RegisterForm";
 import Link from "next/link";
+import { LoginForm } from "@/components/LoginForm";
 
 export default function Home() {
   return (
@@ -16,13 +16,13 @@ export default function Home() {
               width={400}
               height={400}
             />
-            <Link className={buttonVariants()} href="/login">
-              Login
+            <Link className={buttonVariants()} href="/register">
+              Register
             </Link>
           </div>
 
           {/* Right side with login form */}
-          <RegisterForm />
+          <LoginForm />
         </div>
       </div>
     </div>
