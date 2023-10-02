@@ -44,21 +44,18 @@ export const RegisterForm = () => {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="order-1 flex flex-col gap-6"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
         <FormField
           control={form.control}
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Nazwa użytkownika</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
               <FormDescription>
-                This is your public display name.
+                Twoja nazwa, która pokaże się w profilu
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -82,7 +79,7 @@ export const RegisterForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Hasło</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -95,7 +92,7 @@ export const RegisterForm = () => {
           name="confirmPassword"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Confirm Password</FormLabel>
+              <FormLabel>Potwierdź hasło</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -103,8 +100,8 @@ export const RegisterForm = () => {
             </FormItem>
           )}
         />
-        <Button className="w-full mt-6" type="submit">
-          Sign up
+        <Button className="mt-6" type="submit">
+          Zarejestruj
         </Button>
       </form>
     </Form>

@@ -1,28 +1,39 @@
-import { buttonVariants } from "@/components/ui/Button";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { LoginForm } from "@/components/LoginForm";
+import { useState } from "react";
+import { RegisterForm } from "@/components/RegisterForm";
 
 export default function Home() {
+  const [isLogin, setIsLogin] = useState(false);
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="max-w-3xl w-full mx-4 p-8 bg-white rounded-lg shadow-lg flex items-center">
-        {" "}
-        <div className="flex flex-col lg:flex-row w-full gap-14">
-          <div className="lg:w-1/2 order-2 lg:order-1 flex flex-col items-center">
-            <Image
-              src="/pk.png"
-              alt="Politechnika Logo"
-              width={400}
-              height={400}
-            />
-            <Link className={buttonVariants()} href="/register">
-              Register
-            </Link>
+    <div className="absolute w-2/3 h-fit left-0 right-0 top-0 bottom-0 m-auto border p-6">
+      <div className="grid grid-cols-2 h-full">
+        <div className="relative">
+          <Image
+            src="/pk.png"
+            alt="Politechnika Logo"
+            layout="fill"
+            objectFit="cover"
+            className="max-w-full max-h-full"
+          />
+        </div>
+        <div className="flex flex-col items-start pl-2 justify-center pr-20">
+          {isLogin ? <LoginForm /> : <RegisterForm />}
+          <div className="py-6">
+            {isLogin ? (
+              <p className="text-sm">Nie posiadasz jeszcze konta?</p>
+            ) : (
+              <p className="text-sm">Posiadasz już konto?</p>
+            )}
+            <p
+              onClick={() => setIsLogin((prev) => !prev)}
+              className="text-xs text-primary font-bold cursor-pointer"
+            >
+              {isLogin ? "Zarejestruj się" : "Zaloguj się"}
+            </p>
           </div>
-
-          {/* Right side with login form */}
-          <LoginForm />
         </div>
       </div>
     </div>
