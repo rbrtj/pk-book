@@ -8,14 +8,14 @@ import { RegisterForm } from "@/components/RegisterForm";
 export default function Home() {
   const [isLogin, setIsLogin] = useState(false);
   return (
-    <div className="absolute w-2/3 h-fit left-0 right-0 top-0 bottom-0 m-auto border p-6">
+    <div className="absolute w-2/3 h-2/3 left-0 right-0 top-0 bottom-0 m-auto border p-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-        <div className="relative">
+        <div className="flex justify-center items-center">
           <Image
             src="/pk.png"
             alt="Politechnika Logo"
-            layout="fill"
-            objectFit="cover"
+            height={500}
+            width={500}
             className="max-w-full max-h-full"
           />
         </div>

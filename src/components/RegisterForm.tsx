@@ -16,15 +16,18 @@ import * as z from "zod";
 
 const FormSchema = z
   .object({
-    username: z.string().min(1, "Username is required").max(30),
+    username: z.string().min(1, "Nazwa użytkownika jest wymagana").max(30),
     // TODO: Add validation for @pk.edu.pl email
-    email: z.string().min(1, "Email is required").email("Invalid email"),
-    password: z.string().min(8, "Password must be at least 8 characters"),
-    confirmPassword: z.string().min(1, "Password confirmation is required"),
+    email: z
+      .string()
+      .min(1, "Adres email jest wymagany")
+      .email("Nieprawidłowy adres email"),
+    password: z.string().min(8, "Hasło musi składać się z conajmniej 8 znaków"),
+    confirmPassword: z.string().min(1, "Hasła nie są identyczne"),
   })
   .refine((data) => data.password === data.confirmPassword, {
     path: ["confirmPassword"],
-    message: "Passwords do not match",
+    message: "Hasła nie są identyczne",
   });
 
 export const RegisterForm = () => {

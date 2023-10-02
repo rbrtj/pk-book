@@ -14,8 +14,8 @@ import { Input } from "./ui/Input";
 import { Button } from "./ui/Button";
 
 const formSchema = z.object({
-  username: z.string().min(1, "Username is required").max(30),
-  password: z.string().min(8, "Password must be at least 8 characters"),
+  username: z.string().min(1, "Nazwa użytkownika jest wymagana").max(30),
+  password: z.string().min(8, "Hasło musi składać się z conajmniej 8 znaków"),
 });
 
 export const LoginForm = () => {
