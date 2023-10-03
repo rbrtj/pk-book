@@ -87,7 +87,7 @@ export const RegisterForm = () => {
   return (
     <Form {...form}>
       {!pendingVerification ? (
-        <form className="w-full" onSubmit={form.handleSubmit(onSubmit)}>
+        <form className="w-72" onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
             name="username"

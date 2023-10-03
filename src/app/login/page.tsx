@@ -6,7 +6,7 @@ import { useState } from "react";
 import { RegisterForm } from "@/components/RegisterForm";
 
 export default function Home() {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <div className="absolute w-2/3 h-2/3 left-0 right-0 top-0 bottom-0 m-auto border p-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
