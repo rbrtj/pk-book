@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 import { useSignUp } from "@clerk/nextjs";
 import { useState } from "react";
 import { VerificationCodeForm } from "@/components/VerificationCodeForm";
+import { Loader2 } from "lucide-react";
 
 const FormSchema = z
   .object({
@@ -36,6 +37,7 @@ const FormSchema = z
 
 export const RegisterForm = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
+  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
   const [pendingVerification, setPendingVerification] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
   const router = useRouter();
@@ -52,6 +54,7 @@ export const RegisterForm = () => {
   const onSubmit = async (values: z.infer<typeof FormSchema>, e: any) => {
     e.preventDefault();
     if (!isLoaded) return;
+    setIsFormSubmitting(true);
     try {
       await signUp.create({
         emailAddress: values.email,
@@ -61,6 +64,7 @@ export const RegisterForm = () => {
       await signUp?.prepareEmailAddressVerification({ strategy: "email_code" });
       setPendingVerification(true);
     } catch (err: any) {
+      setIsFormSubmitting(false);
       console.error(JSON.stringify(err, null, 2));
     }
   };
@@ -143,7 +147,8 @@ export const RegisterForm = () => {
               </FormItem>
             )}
           />
-          <Button className="mt-6" type="submit">
+          <Button className="mt-6" type="submit" disabled={isFormSubmitting}>
+            {isFormSubmitting && <Loader2 className="animate-spin" />}
             Zarejestruj
           </Button>
         </form>
