@@ -85,6 +85,8 @@ export const RegisterForm = () => {
       }
     } catch (err: any) {
       console.error(JSON.stringify, null, 2);
+      // Rethrow so you can catch in VerficationCodeForm
+      throw err;
     }
   };
 
